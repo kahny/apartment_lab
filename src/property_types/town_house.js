@@ -11,24 +11,13 @@ var Tenant = require("../people/tenant.js");
 function TownHouse(address){
   // only has one unit per address
   this.address = address; 
-
+  var unit1 = new Unit(null, null, null, null);
+  this.units.push(unit1);
 };
-
 
 
 inherits(TownHouse, Property)
 
-TownHouse.prototype.available = function(){
-  // a tenant it should not be available
-  if(this.units[0] !== undefined){	//takes the available from the unit.js 
-  	return false;
-  	console.log("There are no units available")
-  }
-  else{
-  	return true; 
- 	console.log(this.units[0])
-  }
-};
 
 module.exports = TownHouse;
 
