@@ -2,7 +2,7 @@ var expect = require("chai").expect;
 var Unit = require("../src/unit.js"); 
 var Property = require("../src/property_types/property.js");
 var Person = require("../src/people/person.js");
-var Tenant = require("../src/people/person.js");
+var Tenant = require("../src/people/tenant.js");
 
 
 describe("Unit", function(){
@@ -30,7 +30,7 @@ describe("Unit", function(){
 			var tenant = new Tenant('name', 'contact');
 			tenant.addReference(reference1);
 			tenant.addReference(reference2);
-			newProperty.addTenant(unit, tenant)
+			newProperty.addTenant(unit, tenant);
 			expect(unit.available()).to.equal(false);
 		})
 	})

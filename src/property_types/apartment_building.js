@@ -1,28 +1,28 @@
-var property = require("./property.js");
-var inherit = require("../inheritance.js");
+var Property = require("./property.js");
+var inherits = require("../inheritance.js");
 
 
-function ApartmentBuilding(name, address) {
+function ApartmentBuilding(name, address, max) {    //what happens if there's more arguments in the child of inheritence?
   // A building can have many many units 
   this.name = name;
   this.address = address;
+  this.max = max 
 }
 
 inherits(ApartmentBuilding, Property)
 
 
-//is there a max for apartment building?
+ApartmentBuilding.prototype.available = function(){
 
-
-// ApartmentBuilding.prototype.available = function(){
-//   // a tenant it should not be available
-//   if(this.units[0].available || this.units[1].available){	//takes the available from the unit.js 
-//   	return true; 
-//   }
-//   else{
-//   	return false;
-//   }
-// };
+	if (this.units.length < this.max){
+		return true;
+		console.log('There are units available')
+	}
+	else if (this.units.length == this.max){
+		return false;
+		console.log("there are no units available")
+	}
+}
 
 
 module.exports = ApartmentBuilding;

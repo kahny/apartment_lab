@@ -1,11 +1,7 @@
 
 var expect = require("chai").expect;
 var Person = require("../../src/people/person.js");
-
-console.log("blah")
 var Tenant = require("../../src/people/tenant.js");
-
-
 
 
 describe("Tenant", function(){

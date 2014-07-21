@@ -1,4 +1,5 @@
 // require('locus');
+
 var Property = require("./property_types/property.js");
 var Person = require("./people/person.js")
 var Tenant = require("./people/tenant.js")
@@ -8,6 +9,7 @@ function Unit (number, building, sqft, rent) {
   // set params above using this
   this.tenant = null;
 }
+
 
 Unit.prototype.available = function(){
   // check for tenant

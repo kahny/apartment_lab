@@ -1,5 +1,6 @@
-var property = require("./property");
-var inherit = require("../inheritance.js");
+// require('locus');
+var Property = require("./property");
+var inherits = require("../inheritance.js");
 
 
 function Duplex(address) {
@@ -13,13 +14,18 @@ inherits(Duplex, Property);
 
 Duplex.prototype.available = function(){
   // a tenant it should not be available
-  if(this.units[0].available || this.units[1].available){	//takes the available from the unit.js 
-  	return true; 
+  if(this.units[0]!== undefined && this.units[1]!== undefined){	//takes the available from the unit.js 
+  	return false;
+  	console.log("no apartments are available") 
   }
   else{
-  	return false;
+  	return true;
+  	console.log("apartments are available")
   }
 };
 
 
 module.exports = Duplex;
+
+
+// eval(locus)
